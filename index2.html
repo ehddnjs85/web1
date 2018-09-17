@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lee DongWon</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/index2.css">
+<script type="text/javascript">
+	
+
+$(document).ready( function() {
+    $('.subMenu').smint({
+    	'scrollSpeed' : 1000
+    });
+});
+
+
+</script>   
+<script type="text/javascript">
+$(function() {
+$(window).scroll(function(){
+                    var scrollTop = $(window).scrollTop();
+                    if(scrollTop != 0)
+                        $('#header>div>img').stop().animate({'opacity':'1'},400);
+                    else    
+                        $('#header>div>img').stop().animate({'opacity':'0.6'},400);
+                });
+                
+                $('#header>div>img').hover(
+                    function (e) {
+                        var scrollTop = $(window).scrollTop();
+                        if(scrollTop != 0){
+                            $('#header>div>img').stop().animate({'opacity':'0.6'},400);
+                        }
+                    },
+                    function (e) {
+                        var scrollTop = $(window).scrollTop();
+                        if(scrollTop != 0){
+                            $('#header>div>img').stop().animate({'opacity':'0.6'},400);
+                        }
+                    }
+                );
+});
+</script>
+    
+</head>
+<body style="-ms-overflow-style:none;">
+<header>
+    <div id="header" class="subMenu">
+        <div><img src="images/Untitled-4_0000s_0005_Rectangle-1.png">
+            <div class="inner" id="gnb_nav">
+                <img src="images/Untitled-4_0000s_0003_Vector-Smart-Object.png" class="logo">
+                <ul>
+                    <li><a href="#s1" class="subNavBtn">About</a></li>
+                    <li><a href="#s2" class="subNavBtn">Work</a></li>
+                    <li><a href="#s3" class="subNavBtn">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+	<div id="wrap">
+		<div id="banner">
+			<img src="images_2/Untitled-0.png">
+		</div>
+
+		<div class="up">
+          <a href="#" class="top" onclick="jQuery('html, body')
+                .animate({scrollTop:0},1000,'easeOutCubic');return false;">
+                <img src="images/up.png"></a>
+        </div>
+
+		<div id="sec1">
+			<h2>JUICY</h2>
+			<p id="sec1_p">Web renewal / App development</p>
+			<p><strong>대상</strong> : JUICY web site</p>
+			<p><strong>기간</strong> : 2018. 05. 08 ~ 2018. 06. 18</p>
+			<p>쥬씨 웹 사이트를 리뉴얼하고 앱으로 만드는것이 이 프로젝트의 과제였습니다.<br>
+					저는 레이아웃을 리디자인했습니다. 또한 쥬씨를 앱으로 만날 수 있게 디자인 하였습니다.</p>
+		</div>
+		<div id="sec2">
+			<img src="images_2/Untitled-1.png">
+			<img src="images_2/Untitled-2.png">
+			<img src="images_2/Untitled-3.png">
+			<img src="images_2/Untitled-4.png">
+			<img src="images_2/Untitled-5.png">
+			<img src="images_2/Untitled-6.png">
+			<img src="images_2/Untitled-7.png">
+		</div>
+	</div>
+</section>
+<footer>
+    <div id="footer">
+        <p>Made by <strong>DongWon</strong></p>
+    </div>
+</footer>
+</body>
+</html>
