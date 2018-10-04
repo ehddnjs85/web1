@@ -1,0 +1,275 @@
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">   -->
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<!-- <meta name="viewport" content="width=device-width, user-scalable=no">  -->
+<title>adidas</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/index_2.css">
+<script>
+        $(document).ready(function(){ 
+            window.onload = function (){
+                console.log();
+                $('#menu > li').css({
+                    'width': 'calc(100% / '+ $('#menu > li').length + ')'
+                });
+            }
+
+
+            $(window).scroll(function(){
+                console.log($('header').height());
+                console.log($(window).scrollTop());
+                
+                if($(window).scrollTop() == 0) {
+                    // $('header').css({
+                    //     'position': 'relative',
+                    // });
+                    $('header').removeClass('fixed').addClass('relative');
+                } 
+                else if(($(window).scrollTop() + $('header').height()) > ($('header').offset().top)) {
+                    // 위에서 스크립트로 먹인 css는 스크립트에서만 바꿔줄수 있어요
+                    // $('header').css({
+                    //     'position': 'fixed', 
+                    // });
+                    $('header').removeClass('relative').addClass('fixed');
+                }
+            });
+
+            // sec6 눌렀을때 아래 메뉴 토글
+            $('#btn6').on('click', function(){
+                $('.inner_menu').slideToggle();
+            }); 
+
+            // 토글된 버튼 눌렀을때 글씨 색 변경 
+            $(".inner_menu > li").hover(function(){ 
+                $(this).css("color", "#fffff");
+                }, function(){
+                $(this).css("color", "#000");
+            }); 
+ 
+            $('#menu a').click(function(){ 
+                // 메뉴 눌렀을때 부드럽게 넘어가는거
+                event.preventDefault();
+                var href = $(this).attr('href');
+                var target = $(href == "" ? 'html':href);
+                var pos = target.offset().top - $('header').height();
+                $('body, html').animate({scrollTop:pos}, 500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+
+        <header>
+            <nav>
+                <img id="logo" src="img/adidas.jpg" alt="logo" onclick="location.href='adidas_main.html'">
+                    <div class="menu" id="menu1">
+                        <ul id="nav_ul1">
+                            <li><a href="#login" id="login" class="nav_ul">로그인</a></li>
+                            <li><a href="#new_id" id="new_id" class="nav_ul">회원가입</a></li>
+                            <li><a href="#inquiry" id="inquiry" class="nav_ul">주문조회</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu" id="menu2">
+                        <ul id="nav_ul2"> 
+                            <li><a href="adidas_sub1.html" class="section1">MEN</a></li>
+                            <li><a href="adidas_sub1.html" class="section2">WOMEN</a></li>
+                            <li><a href="adidas_sub1.html" class="section3">KIDS</a></li>
+                            <li><a href="adidas_sub1.html" class="section4">SPORTS</a></li>
+                            <li><a href="adidas_sub1.html" class="section5">BRANDS</a></li>
+                            <li><a href="adidas_sub1.html" class="section5">CUSTOMIZE</a></li>
+                            <li><a href="adidas_sub1.html" class="section5">VR STORE</a></li>
+                            <li><a href="adidas_sub1.html" class="section5">ONLINE ONLY</a></li>
+                        </ul> 
+                </div>
+            </nav>
+            <div class="top_down">
+                <a href="#" class="top" onclick="jQuery('html, body')
+                .animate({scrollTop:0},1000,'easeOutCubic');return false;"><img src="img/up.png" style="margin-bottom:5px"></a>
+                <a href="#" class="down" onclick="jQuery('html, body')
+                .animate({scrollTop:jQuery(document).height()},1000,'easeOutCubic');return false;"><img src="img/down.png"></a>
+        </div>   
+        </header>
+        <section>
+            <div id="sec1">
+                <div>
+                    <ul id="sec1_menu">
+                        <li><a href="#">MEN</a></li>
+                        <li><a href="#"><img src="img/arrow.png">신발</a></li>
+                        <li><a href="#"><img src="img/arrow.png">의류</a></li>
+                        <li><a href="#"><img src="img/arrow.png">용품</a></li>
+                        <li><a href="#">WOMEN</a></li>
+                        <li><a href="#"><img src="img/arrow.png">신발</a></li>
+                        <li><a href="#"><img src="img/arrow.png">의류</a></li>
+                        <li><a href="#"><img src="img/arrow.png">용품</a></li>
+                        <li><a href="#">KIDS</a></li>
+                        <li><a href="#"><img src="img/arrow.png">연령별</a></li>
+                        <li><a href="#"><img src="img/arrow.png">신발</a></li>
+                        <li><a href="#"><img src="img/arrow.png">의류</a></li>
+                        <li><a href="#"><img src="img/arrow.png">용품</a></li>
+                    </ul>
+                </div>
+                <div id="sec1_img">
+                    <img src="img/football-coldblooded.jpg">
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div id="sec2">
+                <div class='sec2_header'>
+                    <div id="sec2_info1">
+                        <a href="#">남성</a>
+                        <a href="#">신발</a>
+                    </div>
+                    <div id="sec2_info2">
+                        <ul id="sec2_menu">
+                            <li>
+                                <a href="#신상품순" id="btn6">신상품순&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/arrow_bottom.png"></a>
+                                <ul class="inner_menu">
+                                    <li><a>신상품</a></li>
+                                    <li><a>인기품</a></li>
+                                    <li><a>할인품</a></li> 
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="필터초기화">필터초기화 </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div >
+                        <ul id="sec2_info3_menu">
+                            <li>COLOR</li>
+                            <li>SIZE</li>
+                            <li>STYLE</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="sec2_wrap">
+                <div class="sec2_pro">
+                    <img src="img/s1.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>매치코트 리믹스</h5><h6>FOOTBALL</h6><h5><strong>89,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s2.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>에어로바운스 PR</h5><h6>ORIGINALS</h6><h5><strong>99,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s3.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>에어로바운스 PR</h5><h6>RUNNING</h6><h5><strong>99,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s4.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>테렉스 CC 보트 팔리</h5><h6>RUNNING</h6><h5><strong>99,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s5.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>이큐티 쿠션 ADV</h5><h6>OUTDOOR</h6><h5><strong>169,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s6.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>엔엠디 러너원 스틸스 PK</h5><h6>ORIGINALS</h6><h5><strong>219,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s7.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>코트밴티지</h5><h6>ORIGINALS</h6><h5><strong>89,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s8.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>스위프트 런 PK</h5><h6>ORIGINALS</h6><h5><strong>149,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s9.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>스위프트 런 PK</h5><h6>ORIGINALS</h6><h5><strong>149,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s10.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>이큐티 서포트 ADV</h5><h6>ORIGINALS</h6><h5><strong>149,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s11.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>알파바운스beyond 크리에이터</h5><h6>ORIGINALS</h6><h5><strong>139,000원</strong></h5></a>
+                </div>
+                <div  class="sec2_pro">
+                    <img src="img/s12.JPG" class="sec2_img"  onclick="location.href='adidas_sub2.html'">
+                    <a href="adidas_sub2.html"><h5>튜블라 라이즈</h5><h6>RUNNING</h6><h5><strong>229,000원</strong></h5></a>
+                </div>
+            </div>
+            </div>
+        </section>
+        <footer> 
+            <div id="sec4">
+                <ul>
+                    <li>adidas Korea</li>
+                    <li>주문배송</li>
+                    <li>아디클럽</li>
+                    <li>공지사항</li>
+                    <li>매장안내</li>
+                    <li>단체주문</li>
+                    <li>고객센터 1588-8241</li>
+                </ul>
+             </div>
+             <div id="sec5">
+                <ul class="sec5_1">
+                    <li><strong>PRODUCTS</strong></li>
+                    <li>신상품</li>
+                    <li>인기상품</li>
+                    <li>할인상품</li>
+                    <li>공식 아울렛</li>
+                    <li>온라인 단독</li>
+                    <li>런칭 캘린더</li>
+                    <li>스탭 리뷰</li>
+                    <li>가상 스토어</li>
+                    <li>마이아디다스</li>
+                </ul>
+                <ul class="sec5_1">
+                    <li><strong>SPORTS</strong></li>
+                    <li>축구</li>
+                    <li>러닝</li>
+                    <li>농구</li>
+                    <li>트레이닝</li>
+                    <li>아웃도어</li>
+                    <li>테니스</li>
+                    <li>스케이트 보딩</li>
+                    <li>사이클링</li>
+                </ul>
+                <ul class="sec5_1">
+                    <li><strong>COLLECTIONS</strong></li>
+                    <li>아디다스 스텔라 맥카트니</li>
+                </ul>
+                <ul class="sec5_1">
+                    <li><strong>COMPANY INFO</strong></li>
+                    <li>아디다스의 혁신</li>
+                    <li>아디다스 히스토리</li>
+                    <br>
+                    <li><strong>MEMBERSHIP</strong></li>
+                    <li>아디클럽</li>
+                    <li>캠페인</li>
+                    <li>아디클럽 스포츠</li>
+                    <li>아디클럽 컬쳐</li>
+                    <li>ADIDAS RUNNERS</li>
+                </ul>
+                <ul class="sec5_1">
+                    <li><strong>SUPPORT</strong></li>
+                    <li>고객센터, 심의수선</li>
+                    <li>1588-8241</li>
+                    <li>주문/배송 조회</li>
+                    <li>1:1문의</li>
+                    <li>FAQ</li>
+                    <li>매장안내</li>
+                    <li>구매 이용약관</li>
+                </ul>
+            </div>
+         </footer>
+
+
+    </div>
+    
+
+</body>
+</html>
