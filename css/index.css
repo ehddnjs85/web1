@@ -9,8 +9,12 @@ h2{font-size: 2em;}
     left: 0;
     z-index: 50;
 }
+#header>div>img{
+    opacity: .6;
+}
 .logo{
     float: left;
+    width: 8%;
 }
 .up>a>img{
     position: fixed;
@@ -33,11 +37,11 @@ h2{font-size: 2em;}
 #gnb_nav>ul{
     width: 800px;
     float: right;
-    padding-top: 4%;
+    padding-top: 2%;
 }
 #gnb_nav>ul>li{
     float: left;
-    margin-left: 10%;
+    margin-left: 27%;
 }
 #gnb_nav a:hover{
     color: #fff;
@@ -56,35 +60,37 @@ h2{font-size: 2em;}
     height: 2px;
     bottom: -3px;
     left: 0;
-    background-color: #59cf22;
+    background-color: #ed1c24;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
 .subNavBtn:hover::after {
-    
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-
-
 .banner{
     width: 100%;
     margin: 0 auto;
     text-align: center;
 }
-.banner>span{
+.banner span{
     position: absolute;
     top: 40%;
-    left: 38%;
-    font-size: 4.5em;
+    left: 24%;
+    font-size: 2em;
     color: #ffffff;
+    text-align: left;
 }
-
+#text_third{
+    color: #333333;
+    position: absolute;
+    left: 35%;
+}
 #content{
     width: 100%;
     margin: 0 auto;
 }
-#card_nav{
+/* #card_nav{
     position: relative;
     bottom: 160px;
     width: 100%;
@@ -93,24 +99,31 @@ h2{font-size: 2em;}
     margin: 0 auto;
 }
 #card_nav>ul>li{
-    background: #ffffff;
+    position: relative;
     width: 28.8%;
     margin-right: 6.8%;
-    height: 440px;
     float: left;
     text-align: center;
     box-shadow: 0 3px 16px rgba(0,0,0,.5);
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
 }
 #card_nav>ul>li:last-child{
     margin-right: 0;
 }
 #card_nav>ul>li>a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+}
+#card_nav>ul>li>a>span{
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
-}
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */
 
 #sec1{
     width: 100%;
@@ -119,6 +132,7 @@ h2{font-size: 2em;}
     background: #f8f8f8;
     box-shadow: 0 11px 18px rgba(0,0,0,.2);
     margin: 0 auto;
+    margin-top: 80px;
     position: relative;
 }
 #sec1_box{
@@ -199,6 +213,9 @@ h2{font-size: 2em;}
     color: #ffffff;
     margin-top: 16px;
 }
+.enter_bg:hover{
+    background: #ff6363;
+}
 #sec3{
     position: relative;
     width: 100%;
@@ -206,34 +223,45 @@ h2{font-size: 2em;}
     margin: 0 auto;
     height: 600px;
     background: #fcfbf9;
-    margin-top: 150px;
+    margin-top: 80px;
     box-shadow: 0 8px 28px 1px rgba(0,0,0,.2);
 }
-#sec3>h2{
+#sec3 h2{
     display: inline-block;
-    padding-top: 50px;
-    padding-left: 28px;
+    padding: 70px 0 20px 28px;
 }
-#sec3>img{
+#icon_letter{
     position: absolute;
-    top: 60px;
+    top: 80px;
     left:168px ;
 }
-#sec3>h1{
-    padding: 40px 0 0 28px;
-    font-size: 3em;
+#sec3 h3{
+    padding: 50px 0 0 28px;
     color: #a7a7a7;
     font-weight: normal;
 }
-#sec3>p{
-    padding: 84px 0 0 28px;
-    font-size: 1.4em;
+#sec3 p{
+    padding: 70px 0 0 28px;
+    font-size: 1.4rem;
     line-height: 48px;
 }
-
-
-
-
+#letter{
+    position: absolute;
+    top:-20px;
+    left: 168px;
+    z-index: -99;
+    width: 90%;
+    transform: rotate(-20deg);
+}
+#email:hover{
+    color: #00C73C;
+}
+#phone:hover{
+    color: #0D4EA2;
+}
+#kakao:hover{
+    color: #FFCD00;
+}
 #footer{
     width: 100%;
     height: 200px;
